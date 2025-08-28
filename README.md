@@ -37,6 +37,11 @@ pip install -r requirements.txt
 python -m ipykernel install --user --name whisper-note --display-name "whisper-note"
 ```
 
+Export the environment for Conda
+```
+conda env export --name whisper-note --from-history > environment.yml
+```
+
 ## Usage
 
 ### Command Line Interface
@@ -44,7 +49,7 @@ python -m ipykernel install --user --name whisper-note --display-name "whisper-n
 1. Record and transcribe audio:
 ```bash
 python src/main.py --mode record
-```
+How t```
 
 2. Transcribe an existing audio file:
 ```bash

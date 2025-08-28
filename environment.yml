@@ -1,0 +1,12 @@
+name: whisper-note
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - ipykernel
+  - jupyterlab
+  - ipywidgets
+  - transformers
+  - pytorch
+prefix: /Users/rayhu/miniconda3/envs/whisper-note

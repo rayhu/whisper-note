@@ -18,6 +18,8 @@ A Python-based audio transcription service using OpenAI's Whisper model.
 
 1. Create and activate a conda environment:
 ```bash
+conda env create -f environment.yml
+# or
 conda create -n whisper-note python=3.11
 conda activate whisper-note
 ```
@@ -44,12 +46,19 @@ conda env export --name whisper-note --from-history > environment.yml
 
 ## Usage
 
+
+###
+Run the code in the jupyter lab:
+```
+jupyter lab
+```
+
 ### Command Line Interface
 
 1. Record and transcribe audio:
 ```bash
 python src/main.py --mode record
-How t```
+```
 
 2. Transcribe an existing audio file:
 ```bash

@@ -12,7 +12,7 @@ conda activate whisper-note
 conda install -c conda-forge jupyterlab ipykernel -y
 ```
 
-3. 安装 faster-whisper 及其依赖
+3. Install faster-whisper and its dependencies
 pip install ctranslate2 faster-whisper
 
 4. Install required packages:
@@ -20,7 +20,7 @@ pip install ctranslate2 faster-whisper
 pip install -r requirements.txt
 ```
 
-5. 把当前环境注册为一个 Jupyter 内核
+5. Register the current environment as a Jupyter Kernel
 
 ```bash
 python -m ipykernel install --user --name whisper-note --display-name "whisper-note"

@@ -1,18 +1,20 @@
-# Whisper Note
+# ML Experiments
 
-A Python-based audio transcription service using OpenAI's Whisper model.
+A collection of machine learning experiments and demonstrations, with a focus on deep learning phenomena and training dynamics.
 
-## Features
+## Current Experiments
 
-- Real-time audio recording and transcription
-- Support for multiple output formats (JSON, TXT, SRT)
-- Configurable model parameters
-- Simple command-line interface
+### 1. Double Descent Phenomenon (CIFAR-10)
+Demonstrates the double descent phenomenon in deep learning using CIFAR-10 dataset, exploring:
+- Model-wise double descent: varying model width/parameter count
+- Epoch-wise double descent: training dynamics over extended periods
+- Effects of label noise and dataset size on the phenomenon
 
 ## Prerequisites
 
 - Python 3.11 or higher
 - Conda (recommended for environment management)
+- CUDA-capable GPU (recommended for faster training)
 
 ## Installation
 
@@ -29,9 +31,18 @@ conda activate whisper-note
 conda install -c conda-forge jupyterlab ipykernel -y
 ```
 
-3. Install required packages:
+3. Install PyTorch and required packages:
 ```bash
+# For CUDA support (adjust cuda version as needed):
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Other dependencies
+pip install pandas matplotlib tqdm
+
+# or
+
 pip install -r requirements.txt
+
 ```
 
 4. Register the environment as a Jupyter kernel:
@@ -39,21 +50,49 @@ pip install -r requirements.txt
 python -m ipykernel install --user --name whisper-note --display-name "whisper-note"
 ```
 
-Export the environment for Conda
-```
-conda env export --name whisper-note --from-history > environment.yml
-```
+## Experiments
 
-## Usage
+### Double Descent (double_descent.ipynb)
 
+This notebook demonstrates the double descent phenomenon in deep learning using CIFAR-10 dataset. Features:
+- Configurable model architecture (SimpleCNN with adjustable width)
+- Support for label noise and reduced training set
+- Experiment tracking and visualization
+- Mixed precision training support
+- Detailed bilingual (English/Chinese) documentation
 
-###
-Run the code in the jupyter lab:
-```
+To run the experiments:
+1. Launch JupyterLab:
+```bash
 jupyter lab
 ```
+2. Open `double_descent.ipynb`
+3. Select the "Whisper-Note" kernel
+4. Run all cells to reproduce the double descent phenomenon
 
-### Command Line Interface
+## Project Structure
+
+```
+whisper-note/
+├── double_descent.ipynb    # Double descent experiment notebook
+├── muPT.ipynb             # Other experiments
+├── requirements.txt       # Python package requirements
+└── README.md             # This file
+```
+
+
+
+
+A Python-based audio transcription service using OpenAI's Whisper model.
+
+### Whisper Audio Transcription
+
+- Real-time audio recording and transcription
+- Support for multiple output formats (JSON, TXT, SRT)
+- Configurable model parameters
+- Simple command-line interface
+
+Command Line Interface
 
 1. Record and transcribe audio:
 ```bash

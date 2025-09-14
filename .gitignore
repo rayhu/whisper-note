@@ -61,3 +61,4 @@ log/
 *.pth
 *.onnx
 *.bin 
+data/
